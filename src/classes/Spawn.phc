@@ -1,0 +1,95 @@
+<?PHP namespace phobostech\spawn\classes;
+/*==============================================================================
+  Spawn class
+--------------------------------------------------------------------------------
+  For now, we're just going to make this simple and useable
+
+  We'll get more detailed later. If there ever is a later. *shrugs*
+  I just need some good made-up words. GIMME!
+
+==============================================================================*/
+class Spawn{
+
+  private $letters;
+
+	public function __construct(){
+    require('Letters.phc');
+    $this->letters = new \phobostech\spawn\classes\Letters;
+
+
+	}
+
+  private function rand_consonate(){
+
+    $rando = rand(0,(count($this->letters->consonants)-1));
+    $lett = $this->letters->consonants[$rando];
+    return $lett;
+
+  }
+
+  private function rand_vowel(){
+
+    $rando = rand(0,(count($this->letters->vowels)-1));
+    $lett = $this->letters->vowels[$rando];
+    return $lett;
+
+  }
+
+  public function new_word($pull_count=0){
+
+    // empty string to build word
+    $word_out='';
+
+    // either start with a vowel(1) or a consonant(2)
+    $cv_coin = rand(1,2);
+
+    // if no defined pull count, rand() one up
+    if($pull_count==0) $pull_count = rand(1,6);
+
+    for($i=0; $i<=$pull_count;$i++){
+
+      $cv_coin = (($cv_coin%2)==1 ? 2:1);
+
+      if(($cv_coin%2)==1){
+
+        $consonant = $this->rand_consonate();
+        $word_out .= $consonant;
+
+        // if this is the last pull for the word and
+        // $consonant is a digraph, trigraph, or multigraph
+        // we'll end the word with a vowel.
+        if($i==$pull_count && strlen($consonant)>1){
+          $word_out .= $this->rand_vowel();
+        }
+
+      }else{
+        $word_out .= $this->rand_vowel();
+      }
+    }
+
+    // send over that thar new word
+    return $word_out;
+  }
+
+  public function word_list($word_count=10,$pull_count=0){
+
+    $words = [];
+
+    for($i=0;$i<=$word_count;$i++){
+      $words[$i] = $this->new_word($pull_count);
+    }
+
+    return $words;
+  }
+}
+
+//echo $spawn->new_word();
+// $words = $spawn->word_list();
+// foreach($words as $word){
+//   echo $word."\r\n";
+// }
+
+// $words = $spawn->word_list(50,2);
+// foreach($words as $word){
+//   echo $word."\r\n";
+// }

@@ -1,0 +1,16 @@
+<?PHP namespace phobostech\spawn\classes;
+/*==============================================================================
+
+--------------------------------------------------------------------------------
+
+
+	gah - maybe I got a little too zealous - probably not going to even use
+	this class ... pending deletion.
+
+==============================================================================*/
+class SpellingRules{
+
+	public function __construct(){
+
+	}
+}

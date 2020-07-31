@@ -1,0 +1,17 @@
+<?PHP namespace phobostech\spawn\classes;
+/*==============================================================================
+	RuledRandomizer
+--------------------------------------------------------------------------------
+	This will end up being the class that analyzes and takes care of handling
+	the rules that will be pulled from the database as well as generating
+	the randomizations in association with what specific rules are currently
+	required.
+	(ie: say X has a rule that it can't be before Y,W, or Z - so we omit
+				those letters from the randomization process - shit like that)
+==============================================================================*/
+class RuledRandomizer{
+
+	public function __construct(){
+
+	}
+}

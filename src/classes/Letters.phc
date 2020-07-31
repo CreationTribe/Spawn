@@ -1,0 +1,196 @@
+<?PHP namespace phobostech\spawn\classes;
+/*==============================================================================
+
+--------------------------------------------------------------------------------
+
+public function get_consonant($requiredRule='none'){
+
+
+
+}
+
+public function get_vowel($requiredRule='none'){
+
+
+
+}
+
+public function get_digraph($requiredRule='none'){
+
+
+
+}
+
+public function get_trigraph($requiredRule='none'){
+
+
+
+}
+
+  this will do for now, but when we get a little time, we should tie this
+  into a relational sqlite db with separated single letters, digraphs,
+  trigraphs, and other complex combinations. Each of which should be tied
+  bi-directionally to a table of rules. For example.
+  (ie: cannot follow(a,d), mustfollow(c), prefixonly, suffixonly, etc.)
+
+==============================================================================*/
+class Letters{
+
+  public $consonants;
+  public $vowels;
+
+	public function __construct(){
+
+    $this->consonants = [ 'b',
+                          'c',
+                          'd',
+                          'f',
+                          'g',
+                          'h',
+                          'j',
+                          'k',
+                          'l',
+                          'm',
+                          'n',
+                          'p',
+                          'q',
+                          'r',
+                          's',
+                          't',
+                          'v',
+                          'w',
+                          'x',
+                          'z',
+                          'bh',
+                          'bl',
+                          'br',
+                          'bw',
+                          'ch',
+                          'ck',
+                          'cl',
+                          'cr',
+                          'cw',
+                          'dh',
+                          'dj',
+                          'dr',
+                          'dw',
+                          'ff',
+                          'fh',
+                          'fl',
+                          'fr',
+                          'fw',
+                          'gg',
+                          'gh',
+                          'gl',
+                          'gw',
+                          'hr',
+                          'hw',
+                          'jh',
+                          'kh',
+                          'kk',
+                          'kl',
+                          'kn',
+                          'kr',
+                          'kw',
+                          'lh',
+                          'll',
+                          'mh',
+                          'mm',
+                          'mr',
+                          'mw',
+                          'ng',
+                          'nh',
+                          'nn',
+                          'nr',
+                          'nw',
+                          'ph',
+                          'pl',
+                          'pp',
+                          'pr',
+                          'pw',
+                          'qr',
+                          'qw',
+                          'rh',
+                          'rr',
+                          'sc',
+                          'sh',
+                          'sk',
+                          'sl',
+                          'sm',
+                          'sn',
+                          'sp',
+                          'sq',
+                          'ss',
+                          'st',
+                          'sv',
+                          'sw',
+                          'th',
+                          'tr',
+                          'tw',
+                          'vh',
+                          'vl',
+                          'vr',
+                          'vv',
+                          'wh',
+                          'wr',
+                          'xx',
+                          'zh',
+                          'zz',
+                          'chd',
+                          'drz',
+                          'dzh',
+                          'igh',
+                          'ngg',
+                          'sch',
+                          'ssi',
+                          'sth',
+                          'tch',
+                          'phth',
+                          'chth',
+                          'shch',
+                          'ough',
+                          'tion'];
+
+    $this->vowels = [ 'a',
+                      'e',
+                      'i',
+                      'o',
+                      'u',
+                      'y',
+                      'oe',
+                      'oi',
+                      'oy',
+                      'ou',
+                      'ow',
+                      'oa',
+                      'oo',
+                      'ae',
+                      'ai',
+                      'ay',
+                      'au',
+                      'aw',
+                      'aa',
+                      'ao',
+                      'ee',
+                      'ei',
+                      'ey',
+                      'eu',
+                      'ew',
+                      'ea',
+                      'eo',
+                      'ue',
+                      'ui',
+                      'uy',
+                      'uu',
+                      'uw',
+                      'ua',
+                      'uo',
+                      'ie',
+                      'ii',
+                      'iy',
+                      'iu',
+                      'iw',
+                      'ia',
+                      'io'];
+	}
+}
